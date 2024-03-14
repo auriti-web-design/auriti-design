@@ -43,6 +43,11 @@ const Hero = () => {
                                 Download CV <Download size={18} />
                             </Button>
                         </div>
+                        {/* social */}
+                        <Social
+                            containerStyles='flex gap-x-6 mx-auto xl:mx-0'
+                            iconsStyles='text-foreground text-[22px] hover:text-primary dark:hover:text-primary-foreground transition-all'
+                        />
                     </div>
                     {/* image */}
                     <div className='xl:flex relative hidden'>Image</div>

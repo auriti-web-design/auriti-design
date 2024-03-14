@@ -52,7 +52,26 @@ const Hero = () => {
                     {/* image */}
                     <div className='xl:flex relative hidden'>
                         {/* badge 1 */}
-                        <Badge />
+                        <Badge
+                            containerStyles='absolute top-[24%] -left-[5rem]'
+                            icon={<RiBriefcase4Fill />}
+                            endCountNum={10}
+                            badgeText='Years Of Experience'
+                        />
+                        {/* badge 2 */}
+                        <Badge
+                            containerStyles='absolute top-[80%] -left-[1rem]'
+                            icon={<RiTodoFill />}
+                            endCountNum={80}
+                            badgeText='Finished Projects'
+                        />{/* badge 3 */}
+                        <Badge
+                            containerStyles='absolute top-[55%] -right-8'
+                            icon={<RiTeamFill />}
+                            endCountNum={9}
+                            endCountText='k'
+                            badgeText='Happy Clients'
+                        />
                         <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'></div>
                         <DevImg
                             containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom'

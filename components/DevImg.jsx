@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import img from '@/public/hero/developer.png'
 
-const DevImg = ({ containerStyles }) => {
+const DevImg = ({ containerStyles, imgSrc }) => {
   return (
     <div className={`${containerStyles}`}>
-      <Image src={img} fill priority alt='' />
+      <Image src={imgSrc} fill priority alt='' />
     </div>
   )
 }

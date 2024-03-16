@@ -1,6 +1,6 @@
-import DevImg from "./DevImg"
-import Image from "next/image"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import DevImg from "./DevImg"; // Importazione del componente DevImg per l'immagine dello sviluppatore
+import Image from "next/image"; // Importazione del componente Image di Next.js per il rendering ottimizzato delle immagini
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"; // Importazione dei componenti per i tab
 
 import {
     User2,
@@ -10,8 +10,9 @@ import {
     PhoneCall,
     Calendar,
     Briefcase
-} from 'lucide-react'
+} from 'lucide-react'; // Importazione delle icone da Lucide React
 
+// Dati per le informazioni personali
 const infoData = [
     {
         icon: <User2 size={20} />,
@@ -27,35 +28,36 @@ const infoData = [
     },
     {
         icon: <Calendar size={20} />,
-        text: 'Born on 1 Jul, 1991'
+        text: 'Nato il 1 Lug, 1991'
     },
     {
         icon: <GraduationCap size={20} />,
-        text: 'Computer Scienze'
+        text: 'Scienze informatiche'
     },
     {
         icon: <HomeIcon size={20} />,
-        text: 'Spoltore (PE), Italy'
+        text: 'Spoltore (PE), Italia'
     }
-]
+];
 
+// Dati per le qualifiche
 const qualData = [
     {
         title: 'education',
         data: [
             {
                 university: 'Coursera - Meta',
-                qualification: 'Front-end Web Developer',
+                qualification: 'Sviluppatore Web Front-end',
                 years: '2023 - 2024',
             },
             {
-                university: 'Università dell&apos;Aquila',
-                qualification: 'Bachelors of Science',
+                university: 'Università dell\'Aquila',
+                qualification: 'Laurea in Scienze',
                 years: '2013 - 2018',
             },
             {
-                university: 'Pythagoras Institutes',
-                qualification: 'IT Diploma',
+                university: 'Istituti Pitagora',
+                qualification: 'Diploma IT',
                 years: '2006 - 2013',
             }
         ],
@@ -65,17 +67,17 @@ const qualData = [
         data: [
             {
                 company: 'Dromedian S.r.l.',
-                role: 'WordPress Developer',
-                years: 'Actually',
+                role: 'Sviluppatore WordPress',
+                years: 'Attualmente',
             },
             {
                 company: 'Webshop S.a.S.',
-                role: 'Front-End Developer',
+                role: 'Sviluppatore Front-End',
                 years: '2023-2024',
             },
             {
                 company: 'BearIT S.r.l.',
-                role: 'Front-End Developer',
+                role: 'Sviluppatore Front-End',
                 years: '2022-2023',
             },
             {
@@ -85,23 +87,24 @@ const qualData = [
             },
         ],
     },
-]
+];
 
+// Dati per le competenze
 const skillData = [
     {
-        title: 'Skills',
+        title: 'skills',
         data: [
             {
                 name: 'HTML, CSS'
             },
             {
-                name: 'Front-End Development',
+                name: 'Sviluppo Front-End',
             },
             {
                 name: 'React',
             },
             {
-                name: 'UI/UX Design',
+                name: 'Design UI/UX',
             },
             {
                 name: 'WordPress',
@@ -121,7 +124,7 @@ const skillData = [
                 imgPath: '/about/figma.svg',
             },
             {
-                imgPath: '/about/notion',
+                imgPath: '/about/notion.svg',
             },
             {
                 imgPath: '/about/wordpress.svg',
@@ -130,8 +133,10 @@ const skillData = [
     },
 ];
 
+// Componente About
 const About = () => {
 
+    // Funzione per ottenere i dati in base al titolo
     const getData = (arr, title) => {
         return arr.find((item) => item.title === title);
     }
@@ -143,13 +148,13 @@ const About = () => {
                     About me
                 </h2>
                 <div className="xl:flex-row flex flex-col">
-                    {/* image */}
+                    {/* Immagine */}
                     <div className="xl:flex relative flex-1 hidden">
                         <DevImg containerStyles='bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative'
                             imgSrc='/about/developer.png'
                         />
                     </div>
-                    {/* tabs */}
+                    {/* Tabs */}
                     <div className="flex-1">
                         <Tabs defaultValue="personal">
                             <TabsList className="w-full grid grid-cols-3 xl:max-w-[520px] border">
@@ -157,16 +162,16 @@ const About = () => {
                                 <TabsTrigger className="w-[162px] xl:w-auto" value="qualifications">Qualification</TabsTrigger>
                                 <TabsTrigger className="w-[162px] xl:w-auto" value="skills">Skills</TabsTrigger>
                             </TabsList>
-                            {/* tabs content */}
+                            {/* Contenuto dei tabs */}
                             <div className="xl:mt-8 mt-12 text-lg">
-                                {/* personal info */}
+                                {/* Informazioni personali */}
                                 <TabsContent value="personal">
                                     <div className="xl:text-left text-center">
                                         <h3 className="h3 mb-4">Unmatched Service Qaulity for Over 10 Years</h3>
                                         <p className="subtitle xl:mx-0 max-w-xl mx-auto">
                                             I specialize in crafting intuitive website with cutting-edge technologies, delivering dynamic and engaging user experiences.
                                         </p>
-                                        {/* icons */}
+                                        {/* Icone */}
                                         <div className="xl:grid-cols-2 grid gap-4 mb-12">
                                             {infoData.map((item, index) => {
                                                 return (
@@ -177,7 +182,7 @@ const About = () => {
                                                 )
                                             })}
                                         </div>
-                                        {/* languages */}
+                                        {/* Lingue */}
                                         <div className="gap-y-2 flex flex-col">
                                             <div className="text-primary">Language Skill</div>
                                             <div className="border-border border-b"></div>
@@ -185,15 +190,15 @@ const About = () => {
                                         </div>
                                     </div>
                                 </TabsContent>
-                                {/* qualifications */}
+                                {/* Qualifiche */}
                                 <TabsContent value="qualifications">
                                     <div>
                                         <h3 className="h3 xl:text-left mb-8 text-center">
                                             My Awesome Journey
                                         </h3>
-                                        {/* Experience & education wrapper */}
+                                        {/* Esperienza e istruzione */}
                                         <div className="md:grid-cols-2 gap-y-8 grid">
-                                            {/* experience */}
+                                            {/* Esperienza */}
                                             <div className="gap-y-6 flex flex-col">
                                                 <div className="flex gap-x-4 items-center text-[22px] text-primary">
                                                     <Briefcase />
@@ -201,7 +206,7 @@ const About = () => {
                                                         {getData(qualData, 'experience').title}
                                                     </h4>
                                                 </div>
-                                                {/* list */}
+                                                {/* Lista */}
                                                 <div className="gap-y-8 flex flex-col">
                                                     {getData(qualData, 'experience').data.map((item, index) => {
                                                         const { company, role, years } = item;
@@ -219,12 +224,10 @@ const About = () => {
                                                                 </div>
                                                             </div>
                                                         );
-                                                    }
-                                                    )}
-
+                                                    })}
                                                 </div>
                                             </div>
-                                            {/* education */}
+                                            {/* Istruzione */}
                                             <div className="gap-y-6 flex flex-col">
                                                 <div className="flex gap-x-4 items-center text-[22px] text-primary">
                                                     <GraduationCap size={28} />
@@ -232,7 +235,7 @@ const About = () => {
                                                         {getData(qualData, 'education').title}
                                                     </h4>
                                                 </div>
-                                                {/* list */}
+                                                {/* Lista */}
                                                 <div className="gap-y-8 flex flex-col">
                                                     {getData(qualData, 'education').data.map((item, index) => {
                                                         const { university, qualification, years } = item;
@@ -250,15 +253,53 @@ const About = () => {
                                                                 </div>
                                                             </div>
                                                         );
-                                                    }
-                                                    )}
-
+                                                    })}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </TabsContent>
-                                <TabsContent value="skills">Skills</TabsContent>
+                                {/* Competenze */}
+                                <TabsContent value="skills">
+                                    <div className="xl:text-left text-center">
+                                        <h3 className="h3 mb-8">What I use everyday</h3>
+                                    </div>
+                                    <div className="mb-16">
+                                        <h4 className="mb-2 text-xl font-semibold">Skills</h4>
+                                        <div className="border-border mb-4 border-b"></div>
+                                        {/* Lista di competenze */}
+                                        <div>
+                                            {getData(skillData, 'skills').data.map(
+                                                (item, index) => {
+                                                    const { name } = item;;
+                                                    return (
+                                                        <div className="xl:text-left xl:mx-0 w-2/4 mx-auto text-center">
+                                                            <div className="font-medium" key={index}>
+                                                                {name}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </div>
+                                    </div>
+                                    {/* Strumenti */}
+                                    <div>
+                                        <h4 className="h4 xl:text-left mb-2 text-xl font-semibold">Tools</h4>
+                                        <div className="border-border mb-4 border-b"></div>
+                                        <div className="gap-x-8 xl:justify-start flex justify-center" >
+                                            {/* Strumenti */}
+                                            {getData(skillData, 'Tools').data.map((item, index) => {
+                                                const { imgPath } = item;
+                                                return (
+                                                    <div key={index}>
+                                                        <Image src={imgPath} width={48} height={48} alt='' prioriry />
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </TabsContent>
                             </div>
                         </Tabs>
                     </div>
@@ -268,4 +309,4 @@ const About = () => {
     )
 }
 
-export default About
+export default About; // Esportazione del componente About

@@ -10,7 +10,7 @@ import {
     PhoneCall,
     Calendar,
     Briefcase
-} from 'lucide-react'; // Importazione delle icone da Lucide React
+} from 'lucide-react'; //\ Importazione delle icone da Lucide React
 
 // Dati per le informazioni personali
 const infoData = [

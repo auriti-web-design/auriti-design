@@ -89,7 +89,7 @@ const projectData = [
         link: "/",
         github: '/',
     },
-]
+];
 
 const Work = () => {
   return (
